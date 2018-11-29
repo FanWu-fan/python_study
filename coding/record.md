@@ -1,9 +1,16 @@
 # 一。对象
 1. 判断一个字符串的数字部分(列表解析）：  
->   s = 'total executian tima: 12 s'  
->   [t.isdigit() for t in s.split() ]  
->  isdigit字符串只包含数字返回TURE，不包括小数点
+```
+s = 'total executian tima: 12 s'  
+[t.isdigit() for t in s.split() ]  
+```
+>  isdigit字符串只包含数字返回TURE，不包括小数点  
 
+>读文件readline**s**会产生一个列表将文件整个读入内存中：
+```  
+lines = open('1.txt').readlines()
+lines = [line.rstrip() for line in lines]
+```
 2. 字符串支持格式化的高级替代操作：
 > '%s,eggs,and %s'%('spam','SPAM!')
 > >'spam,eggs,and SPAM!'  
@@ -146,7 +153,40 @@ print({'spam':1.25
 >然而上述方法使用的并不多，一般常用为：
 >for c in s[::2]: print(c,end = ' ')
 
+>L= [1,2,3,4,5]  改变列表内的每一个值正确做法，这里是在原处修改，所有共享引用都会发生变化
+>for i in range(len(L)):  
+>   L[i] += 1
 
+>[x+1 for x in l]列表解析表达式，没有对最初的列表在原处修改，不会引起共享引用的变化
 
+5. zip  
+功能：产生元组,构造字典
+```
+for (x,y) in zip(L1,L2):
+    print(x,y,'--',x+y) #以两个列表同时循环
 
-5. 
+list(zip(L1,L2,L3))  #生成新的里列表
+
+D = dict(zip(L1,L2))
+```
+
+6. enumerate枚举，在迭代协议中，产生一个迭代次数n  
+```
+S = 'spam'
+for (n,s) in enumerate(s):
+    print(n,s)
+--> 0 s
+--> 1 p
+--> 2 a 
+--> 3 m
+```
+
+# 三。迭代器和解析
+1. 利用迭代特性读文件：
+```
+with open('1.txt','r') as f:
+    for (n,line) in enumerate(f):
+        print(n,line,end = '')
+#没有读文件，让for循环在每轮自动调用next从而前进到下一行
+#用“end= ''”来防止输出变成两行隔开
+```
