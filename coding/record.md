@@ -193,7 +193,30 @@ with open('1.txt','r') as f:
 2. 利用列表解析：收集文件中特定字母开头的行
 ```python
 lines=[line.rstrip() for line in open('1.txt') if line[0]=='p']
+
 [x+y for x in 'abc' for y in 'lmn'] #列表解析式可以使用两个“for”
 >> ['al','am','an','bl','bm','bn'......]
+
+list(open('1.txt')) #利用每行迭代协议
+tuple(open('1.txt'))
+'&&'.join(open('1.txt')) #每行之间添加“&&”，输出一个长的字符串
+
+a,b=open('data.txt')
+a, *b = open('1.txt') #实际上open函数利用迭代返回每行的字符串列表
+
+
 ```
-3. 
+# 四。文档
+1. python的文档资源 
+ 
+    |形式|角色|  
+    |:--:|:--:|
+    #注释|文档中的文件
+    dir函数 | 对象中可用属性的列表
+    文档字符串：__doc\_\_ | 附加在对象上的文件中的文档
+    help() |对象的交互帮助
+
+2. 编写代码的陷阱：
+   
+
+
