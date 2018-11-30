@@ -1,13 +1,13 @@
 # 一。对象
 1. 判断一个字符串的数字部分(列表解析）：  
-```
+```python
 s = 'total executian tima: 12 s'  
 [t.isdigit() for t in s.split() ]  
 ```
 >  isdigit字符串只包含数字返回TURE，不包括小数点  
 
 >读文件readline**s**会产生一个列表将文件整个读入内存中：
-```  
+```python
 lines = open('1.txt').readlines()
 lines = [line.rstrip() for line in lines]
 ```
@@ -47,7 +47,7 @@ lines = [line.rstrip() for line in lines]
    5 // -2 --> -3
 
 8. 小数、分数、浮点数：  
-   ```
+   ```python
    0.1 + 0.1 + 0.1 - 0.3 --> 5.5511...7e-17
    >>> from fractions import Fraction
    >>> Fraction(1,10) + Fraction(1,10) + Fraction(1,10) - Fraction(3,10)
@@ -62,7 +62,7 @@ lines = [line.rstrip() for line in lines]
 
 10. 共享引用。如果是可变对象：**列表** 会原处修改值，改变所有变量。  
     如果不是可变对象：*字典、数值、字符串*，则不影响。
-```
+```python
 使用共享应用时，相互影响
 L1 = [1, 2, 3]
 L2 = L1
@@ -118,7 +118,7 @@ L2 = L1[:]
 >a, *b = seq(seq = [1,2,3,4]) --> a=1,b=[2,3,4]
 >a,*b = 'spam' --> a= 's',b = ['p','a','m']  
 >和切片不同的是，用序列解包，返回的都是列表。而切片返回同类型的序列
-```
+```python
 L = [1,2,3,4]
 whlie L:
     front,*L= L
@@ -129,7 +129,7 @@ whlie L:
 >>>4 []
 ```
 2. python没有swith以及case语句，可以根据变量选择动作，一般使用如下：  
-```
+```python
 if:
 elif:
 else:
@@ -161,7 +161,7 @@ print({'spam':1.25
 
 5. zip  
 功能：产生元组,构造字典
-```
+```python
 for (x,y) in zip(L1,L2):
     print(x,y,'--',x+y) #以两个列表同时循环
 
@@ -171,7 +171,7 @@ D = dict(zip(L1,L2))
 ```
 
 6. enumerate枚举，在迭代协议中，产生一个迭代次数n  
-```
+```python
 S = 'spam'
 for (n,s) in enumerate(s):
     print(n,s)
@@ -183,10 +183,17 @@ for (n,s) in enumerate(s):
 
 # 三。迭代器和解析
 1. 利用迭代特性读文件：
-```
+```python
 with open('1.txt','r') as f:
     for (n,line) in enumerate(f):
         print(n,line,end = '')
 #没有读文件，让for循环在每轮自动调用next从而前进到下一行
 #用“end= ''”来防止输出变成两行隔开
 ```
+2. 利用列表解析：收集文件中特定字母开头的行
+```python
+lines=[line.rstrip() for line in open('1.txt') if line[0]=='p']
+[x+y for x in 'abc' for y in 'lmn'] #列表解析式可以使用两个“for”
+>> ['al','am','an','bl','bm','bn'......]
+```
+3. 
