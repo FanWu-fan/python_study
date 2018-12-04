@@ -12,10 +12,24 @@
 '''
 作用域实例
 '''
-X = 99
-def func(Y):
-    X = 55
-    Z = X + Y
-    return print(Z)
+# X = 99
+# def func(Y):
+#     global X
+#     X = 55
+#     Z = X + Y
+#     return print(Z)
 
-func(1)
+# func(1)
+# print('X=',X)
+
+'''
+嵌套作用域实例
+'''
+X = 99
+def f1():
+    X = 88
+    def f2():
+        print(X)
+    f2()
+
+f1()
