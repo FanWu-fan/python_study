@@ -1,13 +1,14 @@
-# Chapter1-对象
+# Chapter1 对象
 
 1. 判断一个字符串的数字部分(列表解析）：  
 ```python
 s = 'total executian tima: 12 s'  
 [t.isdigit() for t in s.split() ]  
 ```
->  isdigit字符串只包含数字返回TURE，不包括小数点  
+isdigit字符串只包含数字返回TURE，不包括小数点  
 
->读文件readline**s**会产生一个列表将文件整个读入内存中：
+读文件readline**s**会产生一个列表将文件整个读入内存中：
+rstrip()是返回删除字符串末尾的指定字符后生成新字符串(默认空格)，即删除每行后面的空格。
 ```python
 lines = open('1.txt').readlines()
 lines = [line.rstrip() for line in lines]
@@ -19,7 +20,7 @@ lines = [line.rstrip() for line in lines]
 > '{0}, eggs,and {1}'.format('spam','SPAM!')
 > >'spam, eggs,and SPAM!'
 
-3. 在 import 一个 A.py 文件以后,使用**dir(A)**获得模块内部的可用的变量名的列表。其中以双下划线开头并结尾的变量名，为python预定义的内置变量名。
+3. 在 import 一个 A.py 文件以后,使用 **dir(A)** 获得模块内部的可用的变量名的列表。其中以双下划线开头并结尾的变量名 为python预定义的内置变量名。
 >['\_\_builtins__',
  '\_\_cached__',
  '\_\_doc__',
@@ -35,10 +36,10 @@ lines = [line.rstrip() for line in lines]
 > * \_\_file__:python文件绝对位置
 
 4. 利用help()生成交互界面的帮助  
-   利用help(str.center)查询特定的方法调用。
+   利用 **help(str.center)** 查询特定的方法调用。
 
 5. *x is y* OR *x is not y*  
-   验证x和y在内存地址上是否严格相等 
+   验证x和y在 **内存地址** 上是否严格相等 
 
 6. 在python中，变量并不需要预声明，但是在使用之前，至少要赋一次值。实际上，这意味着在对其进行加法计算时要计数器初始化为0，在列表后添加元素前，要首先初始化列表为一个空列表。
    
@@ -49,7 +50,7 @@ lines = [line.rstrip() for line in lines]
 
 8. 小数、分数、浮点数：  
    ```python
-   0.1 + 0.1 + 0.1 - 0.3 --> 5.5511...7e-17
+   0.1 + 0.1 + 0.1 - 0.3 -> 5.5511...7e-17
    >>> from fractions import Fraction
    >>> Fraction(1,10) + Fraction(1,10) + Fraction(1,10) - Fraction(3,10)
    Fraction(0,1)  
@@ -59,7 +60,7 @@ lines = [line.rstrip() for line in lines]
    >>>  Decimal('0.0')
    ```
 
-9. 变量（变量名）没有类型，只有对象才有类型。比如：a = 3，a是变量，a引用整数对象3.每一个对象都包含一个头部信息（标记了这个对象的类型），以及一个引用计数器。
+9. 变量（变量名）没有类型，只有对象才有类型。比如：a = 3，a是变量，a引用整数对象3.每一个对象都包含一个 **头部信息** （标记了这个对象的**类型**），以及一个**引用计数器**。
 
 10. 共享引用。如果是可变对象：**列表** 会原处修改值，改变所有变量。  
     如果不是可变对象：*字典、数值、字符串*，则不影响。
@@ -75,7 +76,7 @@ L2 = L1
 L1 = [1,2,3]
 L2 = L1[:]
 ```
-11. 打开文件时，使用R/r关闭转义字符的功能：
+11. 打开文件时，使用R/r **关闭转义字符** 的功能：
 >    myfile = open(**r**'C:\new\text.dat','w')  
 > 模式选择有两种：‘r’输入打开文件（默认）   
 > ‘w'输出生成并打开文件,**会清空文件**   
@@ -83,7 +84,7 @@ L2 = L1[:]
 
 12. 文本写入只能写入字符串，必须使用转换工具将对象转成字符串
 > F.write(str(L) + str(D))  
-在用* for line in file:*后。需要对每一行去除‘\n’.使用”line.rstrip()“-->PS:有时候使用line[:-1],可是一般最后一行没有‘\n’  
+在用* for line in file:*后。需要对每一行去除‘\n’.使用”line.rstrip()“ -> PS:有时候使用line[:-1],可是一般最后一行没有‘\n’  
 >>读取文件后将字符串还原：line.strip()  
 
 >>将 （12， 13， 14）元组还原:首先将”字符串“切分为列  
@@ -104,7 +105,7 @@ L2 = L1[:]
       集合 | 数字 
 
 2. 空的列表、元组、字典、字符串视为 False,常用用法“
-> if X:-->if not X:  
+> if X: -> if not X:  
 
 3. 修改元组值：
 > a = (1,2,3) --> (4,2,3)
