@@ -47,7 +47,49 @@ f = lambda x,y,z: x+y+z
 f(2,3,4)
 #Output: 9
 
-x = 
+#lambda可以使用默认参数
+x = (lambda a="fee",b="fie",c="foe":a+b+c)
+x("wee")
+#OutPut: 'weefiefoe'
+
+#lambda的作用域查找法则：LEGB
+def knights():
+    title = "Sir"
+    action = (lambda x: title + ' ' + x)
+    return action
+act = knights()
+act('robin')
+#OutPut:'Sir robin'
 ```
 
+## 为何使用lambda
+lambda通常用来编写跳转表(jump table)，也就是行为的列表或字典，能够按照需要执行相应的动作，如下段代码所示。
+```python
+L = [
+    lambda x: x**2,
+    lambda x: x**3,
+    lambda x: x**4
+]
+for f in L:
+    print(f(2))
+#OutPut: 4 8 16
+print(L[0](3))
+#OutPut:9
+```
+
+## 在序列中映射函数:map
+例如，更新一个列表counter的所有数字：
+```python
+counters = [1,2,3,4]
+updated = []
+for x in counters:
+    updated.append(x+10)
+updated
+#OutPut: [11,12,13,14]
+```
+在这个常见的操作中，python实际上提供了一个内置的工具。
+**map函数会对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。**
+```python
+
+```
 
