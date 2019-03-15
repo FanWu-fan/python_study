@@ -76,7 +76,14 @@ for f in L:
 print(L[0](3))
 #OutPut:9
 ```
-
+lambda可以用于实现 三元选择
+```python
+lower = (lambda x,y: x if x<y else y)
+lower('bb','aa')
+#OutPut: aa
+lower('aa','bb')
+#OutPut: aa
+```
 ## 在序列中映射函数:map
 例如，更新一个列表counter的所有数字：
 ```python
@@ -90,6 +97,15 @@ updated
 在这个常见的操作中，python实际上提供了一个内置的工具。
 **map函数会对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。**
 ```python
-
+counters = [1,2,3,4]
+def inc(x): return x+10
+list(map(inc,counters))
+# [11, 12, 13, 14]
 ```
+map对一个可迭代对象中的项应用一个内置函数。这里，对列表中的每一个元素应用这个函数。别忘记了，map也是一个可迭代对象，因此，用一个列表调用来迫使它生成所有结果加以显示。
+由于map期待传入一个函数，这恰好是lambda **通常出现的地方之一**：
+>list(map((lambda x:x+10),counters))
+
+
+
 
