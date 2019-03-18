@@ -9,4 +9,5 @@
 * [Chapter6 参数](chapter6/README.md)
 * [Chapter7 函数的高级话题](chapter7/README.md)
 * [Chapter8 迭代和解析，第二部分](chapter8/README.md)
+* [Chapter9 模块](chapter9/README.md)
 
