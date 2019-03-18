@@ -7,7 +7,7 @@
 * [Chapter4 文档](chapter4/README.md)
 * [Chapter5 函数](chapter5/README.md)
 * [Chapter6 参数](chapter6/README.md)
-* [Chapter7 函数的](chapter7/README.md)
+* [Chapter7 函数的高级话题](chapter7/README.md)
 * [Chapter8 迭代和解析，第二部分](chapter8/README.md)
 * [Chapter9 类和OOP](chapter9/README.md)
 
